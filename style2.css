@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow-y: hidden;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@font-face {
+    font-family: Director-regular;
+    src: url(./Director-Regular.otf);
+}
+
+@font-face {
+    font-family: Director-bold;
+    src: url(./Director-bold.otf);
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid white; */
+}
+#sentence1, #sentence2, #sentence3, #yes-button {
+    display: none;
+}
+#yes-button {
+    margin-top: 20px;
+
+    font-family: Director-regular;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 15px;
+    border-color: black; 
+    animation: fadein 1s forwards;
+    transition: ease-in-out 0.5s;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-family: Director-regular;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+p {
+    font-family: Director-regular;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+}
+
+.container {
+    display: flex;
+    margin-top: 100px;
+}
+  
+.child1 {
+    flex: 1;
+    padding: 20px;
+    background-color: #FFFAF3;
+    border: 1px solid black;
+    margin: 20px;
+    align-items: center;
+    justify-content:center;
+    transform: rotate(3deg);
+    transition: transform .15s linear;
+}
+
+.child1:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.child2 {
+    flex: 1;
+    padding: 20px;
+    background-color: #FFFAF3;
+    border: 1px solid black;
+    margin: 20px;
+    align-items: center;
+    justify-content:center;
+    transform: rotate(-5deg);
+    transition: transform .15s linear;
+}  
+
+.child2:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.child3 {
+    flex: 1;
+    padding: 20px;
+    background-color: #FFFAF3;
+    border: 1px solid black;
+    margin: 20px;
+    align-items: center;
+    justify-content:center;
+    transform: rotate(2deg);
+    transition: transform .15s linear;
+}  
+
+.child3:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
