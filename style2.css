@@ -41,9 +41,11 @@ body {
     align-items: center;
     /* border: 2px solid white; */
 }
+
 #sentence1, #sentence2, #sentence3, #yes-button {
     display: none;
 }
+
 #yes-button {
     margin-top: 20px;
 
@@ -58,6 +60,14 @@ body {
     transition: ease-in-out 0.5s;
 }
 
+#yes-button:hover {
+    background-color: black;
+    color: white;
+    border-color: white; 
+    box-shadow: 0 0 15px white;
+    transform: scale(1.15);
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -67,6 +77,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
+    
 }
 
 p {
@@ -79,6 +90,7 @@ p {
 .container {
     display: flex;
     margin-top: 100px;
+    font-family:Arial, Helvetica, sans-serif
 }
   
 .child1 {
@@ -86,7 +98,7 @@ p {
     padding: 20px;
     background-color: #FFFAF3;
     border: 1px solid black;
-    margin: 20px;
+    margin: 10px;
     align-items: center;
     justify-content:center;
     transform: rotate(3deg);
@@ -103,7 +115,7 @@ p {
     padding: 20px;
     background-color: #FFFAF3;
     border: 1px solid black;
-    margin: 20px;
+    margin: 10px;
     align-items: center;
     justify-content:center;
     transform: rotate(-5deg);
@@ -120,7 +132,7 @@ p {
     padding: 20px;
     background-color: #FFFAF3;
     border: 1px solid black;
-    margin: 20px;
+    margin: 10px;
     align-items: center;
     justify-content:center;
     transform: rotate(2deg);
@@ -131,6 +143,29 @@ p {
     transform: scale(1.15);
     cursor: pointer;
 }
+
+header {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
 
 @media only screen and (max-width: 768px) {
 
