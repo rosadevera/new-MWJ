@@ -1,47 +1,24 @@
-$(document).ready(function() {
-    const sentences = [
-        "...",
-        "welcome to your new life",
-        "are you ready to start over?"
-    ];
+// Function to show the alert and start the countdown to redirect
+function showAlertAndRedirect() {
+    // Display the alert after 10 seconds
+    setTimeout(function() {
+        alert("ALERT: A VIRUS HAS WASHED OVER THIS SITE. THIS SITE WILL BE DESTROYED IN 5 SECONDS.");
 
-    let currentSentenceIndex = 0;
-    let currentCharIndex = 0;
+        // Redirect to another page after 5 seconds
+        setTimeout(function() {
+            window.location.href = "./private.html"; // Replace with your desired URL
+        }, 5000);
+    }, 10000);
+}
 
-    function typeSentence() {
-        const currentSentence = sentences[currentSentenceIndex];
-        const currentSentenceElement = $(`#sentence${currentSentenceIndex + 1}`);
+function showFlashing() {
+    setTimeout(function() {
+        document.getElementById('flashing-rectangle').classList.add('active');
+    }, 9995); // Adjust delay as needed
+}
 
-        if (currentCharIndex < currentSentence.length) {
-            currentSentenceElement.text(currentSentence.substring(0, currentCharIndex + 1));
-            currentSentenceElement.show();
-            currentCharIndex++;
-            setTimeout(typeSentence, 75); // Adjust typing speed
-        } else {
-            // After typing the current sentence, stay visible for 3 seconds before typing the next
-            if (currentSentenceIndex < sentences.length - 1) {
-                setTimeout(function() {
-                    currentSentenceElement.fadeOut(500, function() {
-                        currentSentenceIndex++;
-                        currentCharIndex = 0;
-                        currentSentenceElement.text(""); // Clear the current sentence text
-                        setTimeout(typeSentence, 1000); // Delay before typing the next sentence
-                    });
-                }, 3000); // Stay visible for 3 seconds
-            } else {
-                // For the last sentence, show the button
-                setTimeout(function() {
-                    $('#yes-button').show();
-                }, 3000); // Show the button after 3 seconds
-            }
-        }
-    }
-
-    // Start typing animation with an initial delay
-    setTimeout(typeSentence, 1500);
-
-    // Click event handler for the YES button
-    $('#yes-button').on('click', function() {
-        window.location.href = './eye.html';
-    });
-});
+// Call the function when the page loads
+window.onload = function() {
+    showAlertAndRedirect();
+    showFlashing();
+};
